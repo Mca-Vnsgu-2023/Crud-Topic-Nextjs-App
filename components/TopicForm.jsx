@@ -13,7 +13,7 @@ export const TopicForm = ({ id, data }) => {
   const AddTopic = async (inputData) => {
     if (inputData?.title || inputData?.description !== '') {
       try {
-        const res = await fetch('http://localhost:3000/api/topics', {
+        const res = await fetch('http://127.0.0.1:3000/api/topics', {
           method: "POST",
           headers: {
             "content-type": "application/json"
@@ -40,7 +40,7 @@ export const TopicForm = ({ id, data }) => {
 
   const EditTopic = async ({ id, inputData }) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`http://127.0.0.1:3000/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
