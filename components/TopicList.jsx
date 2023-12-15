@@ -4,11 +4,12 @@ import Link from "next/link";
 import { HiPencilAlt } from 'react-icons/hi'
 import styles from './main.module.scss'
 import moment from "moment";
+import {BAS_API_URL} from  '../utils/constants'
 
 
 const getTopics = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:3000/api/topics", {
+      const res = await fetch(`${BAS_API_URL}/api/topics`, {
         cache: "no-store",
       });
   
