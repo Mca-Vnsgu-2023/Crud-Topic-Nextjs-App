@@ -23,6 +23,10 @@ export default async function EditTopic({params}) {
   const { id } = params;
   const { topic } = await getTopicById(id);
 
+  if(!BASE_API_URL){
+    return null;
+}
+
   return (
     <div>
         <TopicForm id={id} data={topic} />
