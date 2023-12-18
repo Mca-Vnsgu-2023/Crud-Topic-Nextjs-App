@@ -1,9 +1,10 @@
 import { TopicForm } from "../../../components/TopicForm";
 import React from "react";
+import { BASE_API_URL } from "../../../utils/constants";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(`http://127.0.0.1:3000/api/topics/${id}`, {
+    const res = await fetch(`${BASE_API_URL}/api/topics/${id}`, {
       cache: "no-store",
     });
 
@@ -21,7 +22,6 @@ export default async function EditTopic({params}) {
 
   const { id } = params;
   const { topic } = await getTopicById(id);
-  const { title, description } = topic;
 
   return (
     <div>
