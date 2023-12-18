@@ -4,7 +4,7 @@ import React from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import { toast } from "react-toastify";
 import Swal from 'sweetalert2'
-import {BAS_API_URL} from  '../utils/constants'
+import {BASE_API_URL} from  '../utils/constants'
 
 
 export const RemoveBtn = ({ id }) => {
@@ -13,7 +13,7 @@ export const RemoveBtn = ({ id }) => {
 
     const RemoveTopic = async () => {
         if (id) {
-            const res = await fetch(`${BAS_API_URL}/api/topics?id=${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/topics?id=${id}`, {
                 method: "DELETE"
             })
             if (res.ok) {

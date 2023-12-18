@@ -4,12 +4,12 @@ import Link from "next/link";
 import { HiPencilAlt } from 'react-icons/hi'
 import styles from './main.module.scss'
 import moment from "moment";
-import {BAS_API_URL} from  '../utils/constants'
+import {BASE_API_URL} from  '../utils/constants'
 
 
 const getTopics = async () => {
     try {
-      const res = await fetch(`${BAS_API_URL}/api/topics`, {
+      const res = await fetch(`${BASE_API_URL}/api/topics`, {
         cache: "no-store",
       });
   
@@ -26,6 +26,10 @@ const getTopics = async () => {
 export default async function TopicList() {
 
     const { topics } = await getTopics()
+
+    if(!BASE_API_URL){
+        return null;
+    }
 
     return (
         <div>

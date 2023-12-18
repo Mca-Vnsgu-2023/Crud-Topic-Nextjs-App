@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import {BAS_API_URL} from  '../utils/constants'
+import {BASE_API_URL} from  '../utils/constants'
 
 
 export const TopicForm = ({ id, data }) => {
@@ -14,7 +14,7 @@ export const TopicForm = ({ id, data }) => {
   const AddTopic = async (inputData) => {
     if (inputData?.title || inputData?.description !== '') {
       try {
-        const res = await fetch(`${BAS_API_URL}/api/topics`, {
+        const res = await fetch(`${BASE_API_URL}/api/topics`, {
           method: "POST",
           headers: {
             "content-type": "application/json"
@@ -41,7 +41,7 @@ export const TopicForm = ({ id, data }) => {
 
   const EditTopic = async ({ id, inputData }) => {
     try {
-      const res = await fetch(`${BAS_API_URL}/api/topics/${id}`, {
+      const res = await fetch(`${BASE_API_URL}/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
