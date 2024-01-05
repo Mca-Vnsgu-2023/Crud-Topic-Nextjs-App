@@ -2,8 +2,17 @@ import mongoose, { Schema } from "mongoose";
 
 const topicSchema = new Schema(
   {
-    title: String,
-    description: String,
+    title:{
+      type:String,
+    },
+    description:{
+      type:String
+    },
+    userId:{
+      type: mongoose.Schema.Types.ObjectId,
+      require:true,
+      ref: 'Users'
+    } 
   },
   {
     timestamps: true,

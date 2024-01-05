@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/Topics/Utils/logoutAction.js", "components/Topics/EmptyList.jsx"  ],
   "exclude": [
     "node_modules"
   ]

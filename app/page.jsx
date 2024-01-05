@@ -1,11 +1,12 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import TopicList from '../components/TopicList'
+import TopicList from '../components/Topics/index'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 export default function Home() {
   return (
-    <div style={{paddingTop: '15px'}}>
-      <TopicList />
-    </div>
+    <ProtectedRoute>
+      <div style={{ paddingTop: '15px' }}>
+       <TopicList />
+      </div>
+    </ProtectedRoute>
   )
 }
