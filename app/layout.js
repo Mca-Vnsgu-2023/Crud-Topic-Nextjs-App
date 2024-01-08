@@ -1,6 +1,4 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import './globals.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Montserrat } from 'next/font/google'

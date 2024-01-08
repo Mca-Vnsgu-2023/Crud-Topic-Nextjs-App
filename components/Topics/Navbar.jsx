@@ -26,21 +26,19 @@ export default function Navbar() {
 
     return (
         <nav className="navbar bg-dark border-bottom border-body ps-3 pe-4 mb-3" data-bs-theme="dark" >
-            <div className="d-flex justify-content-between col-md-10">
+            <div className="d-flex col-md-10">
                 <Link href={"/"} className={styles.navBarLink}>
                     <p>My Todo</p>
                 </Link>
-                <div className="ps-4">
                 <button className='btn btn-primary' onClick={() => router.push('/topic/add')}>
                     <HiPlus size={24} color="white"/>
                 </button>
-                </div>
             </div>
-            <div className="d-flex justify-content-between ps-5 col-md-2">
-                <button>
+            <div className="d-flex justify-content-between align-item-center group ps-2 col-md-2">
+                <button className="pe-2">
                     <HiOutlineUserCircle size={24} color="white" /> {userName}
                 </button>
-                <button onClick={onLogOut} className="ps-3 ms-2">
+                <button onClick={onLogOut} >
                     <HiOutlineLogout size={24} color="red" />
                 </button>
             </div>
