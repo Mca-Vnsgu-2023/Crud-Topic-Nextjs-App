@@ -1,26 +1,13 @@
 'use client'
-import { useRouter } from "next/navigation";
 import { HiOutlineTrash } from "react-icons/hi";
-import { toast } from "react-toastify";
 import Swal from 'sweetalert2';
-import { deleteTopic } from "./Utils/topicAction";
 
 
-export const RemoveBtn = ({ id }) => {
-
-  const router = useRouter()
+export const RemoveBtn = ({ id,handleDelete }) => {
 
   const RemoveTopic = async () => {
     if (id) {
-      deleteTopic(id).then((res) => {
-        if (res.status == 201) {
-          toast.error("Record deleted ssuccessfully!", {
-            position: toast.POSITION.TOP_RIGHT, autoClose: 2000
-          });
-          router.push('/')
-          router.refresh();
-        }
-      })
+      handleDelete(id)
     }
   }
 

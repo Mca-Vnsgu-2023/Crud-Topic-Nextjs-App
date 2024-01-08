@@ -31,7 +31,7 @@ function SignUp() {
     }
 
     return (
-        <div className='d-flex justify-content-center align-items-center vh-100'>
+        <div className='d-flex justify-content-center align-items-center pt-5'>
             <div>
                 <h1 className='text-center'>SignUp</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -45,7 +45,7 @@ function SignUp() {
                         />
                     </div>
                     <div className="mb-3">
-                        <input
+                        <input required
                             type="email"
                             placeholder='Email'
                             className="form-control"
@@ -55,7 +55,7 @@ function SignUp() {
                         />
                     </div>
                     <div className="mb-3">
-                        <input
+                        <input required
                             type="password"
                             placeholder='Password'
                             className="form-control"
@@ -72,7 +72,7 @@ function SignUp() {
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
                         <p>Already have an Account?</p>
-                        <p><Link href='/auth/login'>Login</Link></p>
+                        <Link href='/auth/login'>Login</Link>
                     </div>
                 </form>
             </div>

@@ -6,7 +6,7 @@ import styles from '../main.module.scss';
 import { RemoveBtn } from "./RemoveBtn";
 
 
-export default function Topics({data}) {
+export default function Topics({data,handleDelete}) {
 
     return (
         <div>
@@ -29,7 +29,7 @@ export default function Topics({data}) {
                                     </button>
                                 </Link>
                                 <div>
-                                    <RemoveBtn id={item?._id} />
+                                    <RemoveBtn id={item?._id} handleDelete={handleDelete}/>
                                 </div>
                             </div>
                         </div>

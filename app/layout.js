@@ -3,8 +3,10 @@ import './globals.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { Montserrat } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'My List App',
@@ -17,7 +19,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel='icon' href='/listLogo.png' />
       </head>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <div className='container mt-3'>
           <div className='mt-3'>
             <ToastContainer />

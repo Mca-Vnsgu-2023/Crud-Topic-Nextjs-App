@@ -3,8 +3,9 @@ import Navbar from "./Navbar";
 import EmptyList from './EmptyList'
 import { getCookie } from 'cookies-next';
 import { useEffect, useState } from "react";
-import { getAllTopics } from './Utils/topicAction'
+import { getAllTopics,deleteTopic } from './Utils/topicAction'
 import Topics from './List'
+import { toast } from "react-toastify";
 
 function TopicsList() {
     const userId = getCookie('userId')
@@ -25,11 +26,22 @@ function TopicsList() {
         setLoading(false)
     }
 
+    const handleDelete=(id)=>{
+        deleteTopic(id).then((res) => {
+            if (res.status == 201) {
+                toast.error("Record deleted ssuccessfully!", {
+                    position: toast.POSITION.TOP_RIGHT, autoClose: 2000
+                });
+                getTopicList()
+            }
+        })
+    }
+
     useEffect(() => {
         if (userId) {
             getTopicList()
         }
-    }, [topics])
+    }, [userId])
 
     return (
         <div>
@@ -43,7 +55,7 @@ function TopicsList() {
                 :
                 hasTopics ?
                     <>
-                        <Topics data={topics} />
+                        <Topics data={topics} handleDelete={handleDelete}/>
                     </>
                     : <EmptyList />
             }

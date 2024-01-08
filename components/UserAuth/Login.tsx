@@ -31,7 +31,7 @@ function Login() {
     }
 
     return (
-        <div className='d-flex justify-content-center align-items-center vh-100'>
+        <div className='d-flex justify-content-center align-items-center pt-5'>
             <div>
                 <h1 className='text-center'>LogIn</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -64,7 +64,7 @@ function Login() {
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
                         <p>Do not have an Account?</p>
-                        <p><Link href='/auth/signup'>SignUp</Link></p>
+                        <Link href='/auth/signup'>SignUp</Link>
                     </div>
                 </form>
             </div>
