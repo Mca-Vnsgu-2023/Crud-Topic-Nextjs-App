@@ -1,0 +1,17 @@
+.passwordInputwithImage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    button {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+
+.forgotPasswordDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

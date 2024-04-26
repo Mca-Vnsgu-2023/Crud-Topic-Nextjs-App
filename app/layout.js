@@ -2,7 +2,7 @@ import './globals.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Montserrat } from 'next/font/google'
-
+import './index.css'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 

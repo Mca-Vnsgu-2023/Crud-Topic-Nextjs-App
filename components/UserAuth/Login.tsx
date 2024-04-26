@@ -1,34 +1,50 @@
 'use client'
+import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { toast } from 'react-toastify'
 import { BASE_API_URL } from '../../utils/constants'
-import axios from 'axios'
-
+import styles from './user.module.scss'
 
 
 function Login() {
 
     const {register, handleSubmit}=useForm()
     const router = useRouter()
+    const [showPassword, setShowPassword] = useState(false);
 
-    const onSubmit=async (inputData)=>{
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const onSubmit = async (inputData) => {
         try {
-            const res = await axios.post(`${BASE_API_URL}/api/users/login`, inputData)
-            if (res.status == 200) {
-                toast.success("Login successfully !", {
-                    position: toast.POSITION.TOP_RIGHT, autoClose:2000
+            const res = await axios.post(`${BASE_API_URL}/api/users/login`, inputData);
+            if (res.status === 200) {
+                toast.success("Login successful!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
                 });
-                router.push('/')
+                router.push('/');
             } else {
-                throw new Error("User not login.")
+                toast.error("Invalid Credentials or Server Error!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
+                });
+                throw new Error("Invalid Credentials or Server Error");
             }
         } catch (err) {
-            console.log(err);
+            console.log("Error:", err);
+            toast.error("An error occurred. Please try again later.", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 2000
+            });
         }
-    }
+    };
+    
 
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
@@ -45,26 +61,33 @@ function Login() {
                             {...register('email')}
                         />
                     </div>
-                    <div className="mb-3">
-                        <input required
-                            type="password"
-                            placeholder='Password'
-                            className="form-control"
-                            id="exampleInputPassword1"
-                            {...register('password')}
-
-                         />
+                    <div className={`mb-3 input-group`}>
+                        <div className={`${styles.passwordInputwithImage}`}>
+                            <input
+                                required
+                                type={showPassword ? 'text' : 'password'}
+                                placeholder='Password'
+                                className="form-control"
+                                id="exampleInputPassword1"
+                                {...register('password')}
+                            />
+                            <button onClick={togglePasswordVisibility} type="button" >
+                                {showPassword ?
+                                    <HiEye size={20} /> :
+                                    <HiEyeOff size={20} />
+                                }
+                            </button>
+                        </div>
                     </div>
-                    <div className="mb-3 form-check d-flex justify-content-center">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label ps-2" htmlFor="exampleCheck1">Remember me</label>
+                    <div className="mb-3 d-flex">
+                        <Link href='/auth/forgotPassword' style={{color:'blue'}}>Forgot Password?</Link>
                     </div>
                     <div>
                         <button className='btn btn-primary btn-lg w-100'  type='submit'>Login</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
                         <p>Do not have an Account?</p>
-                        <Link href='/auth/signup'>SignUp</Link>
+                        <Link href='/auth/signup' style={{color:'blue'}}>SignUp</Link>
                     </div>
                 </form>
             </div>

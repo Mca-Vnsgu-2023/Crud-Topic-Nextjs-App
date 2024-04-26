@@ -63,16 +63,16 @@ function SignUp() {
                             {...register('password')}
                         />
                     </div>
-                    <div className="mb-3 form-check d-flex justify-content-center">
+                    {/* <div className="mb-3 form-check d-flex justify-content-center">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label ps-2" htmlFor="exampleCheck1">Remember me</label>
-                    </div>
+                    </div> */}
                     <div>
                         <button className='btn btn-primary btn-lg w-100' type='submit'>SignUp</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
                         <p>Already have an Account?</p>
-                        <Link href='/auth/login'>Login</Link>
+                        <Link href='/auth/login' style={{color:'blue'}}>Login</Link>
                     </div>
                 </form>
             </div>

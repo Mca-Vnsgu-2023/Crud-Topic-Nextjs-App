@@ -6,6 +6,7 @@ import { logoutAction } from "./Utils/logoutAction";
 import { getCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from "react";
+import Swal from 'sweetalert2';
 
 
 export default function Navbar() {
@@ -20,8 +21,17 @@ export default function Navbar() {
     },[cookie])
 
     const router = useRouter()
+
     const onLogOut = () => {
-        logoutAction()
+        Swal.fire({
+            title: "Are you sure want to LogOut?",
+            showDenyButton: true,
+            confirmButtonText: "Yes"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logoutAction()
+            }
+        });
     }
 
     return (
@@ -39,7 +49,7 @@ export default function Navbar() {
                     <HiOutlineUserCircle size={24} color="white" /> {userName}
                 </button>
                 <button onClick={onLogOut} >
-                    <HiOutlineLogout size={24} color="red" />
+                    <HiOutlineLogout title="LogOut" size={24} color="red" />
                 </button>
             </div>
         </nav>
