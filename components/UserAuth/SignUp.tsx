@@ -71,8 +71,8 @@ function SignUp() {
                         <button className='btn btn-primary btn-lg w-100' type='submit'>SignUp</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
-                        <label>Already have an Account?</label>
-                        <Link href='/auth/login' style={{color:'blue'}}>Login</Link>
+                        {/* <label>Already have an Account?</label> */}
+                        <Link href='/auth/login' style={{color:'blue'}}>Already have an Account? Login</Link>
                     </div>
                 </form>
             </div>
