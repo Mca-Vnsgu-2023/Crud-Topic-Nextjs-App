@@ -48,7 +48,7 @@ function Login() {
 
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
-            <div>
+            <div className='pt-5'>
                 <div className='text-center' style={{fontSize: '30px', fontWeight:'500px'}}>LogIn</div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
