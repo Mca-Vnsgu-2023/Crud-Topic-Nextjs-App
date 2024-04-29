@@ -49,9 +49,9 @@ function Login() {
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
             <div className='pt-5'>
+            <Link href=''  style={{fontSize: '30px', fontWeight:'500px',color:'black'}}>LogIn</Link>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
-                        <label className='mb-3' htmlFor="LogIn" style={{ fontSize: '30px', fontWeight: '500px' }}>LogIn</label>
                         <input required
                             type="email"
                             placeholder='Email'
@@ -86,8 +86,7 @@ function Login() {
                         <button className='btn btn-primary btn-lg w-100' type='submit'>Login</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
-                        <label>Do not have an Account?</label>
-                        <Link href='/auth/signup' style={{ color: 'blue' }}>SignUp</Link>
+                        <Link href='/auth/signup' style={{ color: 'blue' }}>Do not have an Account? SignUp</Link>
                     </div>
                 </form>
             </div>
