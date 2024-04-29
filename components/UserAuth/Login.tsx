@@ -49,7 +49,7 @@ function Login() {
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
             <div className='pt-5'>
-                <div className='text-center' style={{fontSize: '30px', fontWeight:'500px'}}>LogIn</div>
+                <Link href=''><h1 className='text-center'>LogIn</h1></Link>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
                         <input required
@@ -86,7 +86,7 @@ function Login() {
                         <button className='btn btn-primary btn-lg w-100'  type='submit'>Login</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
-                        <p>Do not have an Account?</p>
+                        <Link href={''}>Do not have an Account?</Link>
                         <Link href='/auth/signup' style={{color:'blue'}}>SignUp</Link>
                     </div>
                 </form>

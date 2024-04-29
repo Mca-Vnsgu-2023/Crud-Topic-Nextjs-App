@@ -32,14 +32,14 @@ function SignUp() {
 
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
-            <div>
-                <h1 className='text-center'>SignUp</h1>
+            <div className='pt-5'>
+                <Link href=''><h1 className='text-center'>SignUp</h1></Link>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
                         <input
                             type="text"
                             placeholder='Name'
-                            className="form-control"
+                            className="form-control"    
                             id="exampleInputName"
                             {...register('name')}
                         />
@@ -71,7 +71,7 @@ function SignUp() {
                         <button className='btn btn-primary btn-lg w-100' type='submit'>SignUp</button>
                     </div>
                     <div className='mt-3 d-flex justify-content-center align-item-center'>
-                        <p>Already have an Account?</p>
+                        <Link href=''>Already have an Account?</Link>
                         <Link href='/auth/login' style={{color:'blue'}}>Login</Link>
                     </div>
                 </form>
