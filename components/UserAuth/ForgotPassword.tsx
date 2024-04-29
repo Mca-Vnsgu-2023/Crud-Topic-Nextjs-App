@@ -33,7 +33,7 @@ function ForgotPassword() {
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
             <div>
-                <h1 className='text-center'>Reset Password</h1>
+                <Link href=''  style={{fontSize: '30px', fontWeight:'500px',color:'black'}}>Reset Password</Link>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
                         <input required
