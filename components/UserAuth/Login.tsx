@@ -49,7 +49,7 @@ function Login() {
     return (
         <div className='d-flex justify-content-center align-items-center pt-5'>
             <div>
-                <h1 className='text-center'>LogIn</h1>
+                <div className='text-center' style={{fontSize: '30px', fontWeight:'500px'}}>LogIn</div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
                         <input required
@@ -73,8 +73,8 @@ function Login() {
                             />
                             <button onClick={togglePasswordVisibility} type="button" >
                                 {showPassword ?
-                                    <HiEye size={20} /> :
-                                    <HiEyeOff size={20} />
+                                    <HiEye size={20} color="black" /> :
+                                    <HiEyeOff size={20} color="black" />
                                 }
                             </button>
                         </div>
